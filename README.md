@@ -69,7 +69,13 @@ TODO: Run eslint-doc-generator to generate the configs list (or delete this sect
 ## Rules
 
 <!-- begin auto-generated rules list -->
-TODO: Run eslint-doc-generator to generate the rules list.
+
+🔧 Automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/user-guide/command-line-interface#--fix).
+
+| Name                                                                             | Description                                                    | 🔧 |
+| :------------------------------------------------------------------------------- | :------------------------------------------------------------- | :- |
+| [prefer-true-attribute-shorthand](docs/rules/prefer-true-attribute-shorthand.md) | require shorthand form attribute when `v-bind` value is `true` | 🔧 |
+
 <!-- end auto-generated rules list -->
 
 
