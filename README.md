@@ -83,3 +83,5 @@ TODO: Run eslint-doc-generator to generate the configs list (or delete this sect
 <!-- end auto-generated rules list -->
 
 
+# License
+This code is licensed under the [MIT](https://github.com/Turmag/turmag-eslint-special-rules/blob/main/LICENSE) License.
