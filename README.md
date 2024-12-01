@@ -27,12 +27,12 @@ pnpm add eslint-plugin-turmag-special-rules --save-dev
 In your [configuration file](https://eslint.org/docs/latest/use/configure/configuration-files#configuration-file), import the plugin `eslint-plugin-turmag-special-rules` and add `turmagEslintSpecialRules` to the `plugins` key:
 
 ```js
-import turmagEslintSpecialRules from "eslint-plugin-turmag-special-rules";
+import turmagSpecialRules from "eslint-plugin-turmag-special-rules";
 
 export default [
     {
         plugins: {
-            turmagEslintSpecialRules
+            'turmag-special-rules': turmagSpecialRules
         }
     }
 ];
@@ -42,15 +42,15 @@ export default [
 Then configure the rules you want to use under the `rules` key.
 
 ```js
-import turmagEslintSpecialRules from "eslint-plugin-turmag-special-rules";
+import turmagSpecialRules from "eslint-plugin-turmag-special-rules";
 
 export default [
     {
         plugins: {
-            turmagEslintSpecialRules
+            'turmag-special-rules': turmagSpecialRules
         },
         rules: {
-            "turmagEslintSpecialRules/rule-name": "warn"
+            "turmag-special-rules/rule-name": "warn"
         }
     }
 ];
