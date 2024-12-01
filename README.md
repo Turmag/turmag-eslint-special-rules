@@ -76,6 +76,7 @@ TODO: Run eslint-doc-generator to generate the configs list (or delete this sect
 | :------------------------------------------------------------------------------- | :------------------------------------------------------------- | :- |
 | [add-vue-extension](docs/rules/add-vue-extension.md)                             | require .vue in vue files                                      | 🔧 |
 | [prefer-true-attribute-shorthand](docs/rules/prefer-true-attribute-shorthand.md) | require shorthand form attribute when `v-bind` value is `true` | 🔧 |
+| [use-shortest-alias](docs/rules/use-shortest-alias.md)                           | There are can be used shortest alias                           | 🔧 |
 
 <!-- end auto-generated rules list -->
 

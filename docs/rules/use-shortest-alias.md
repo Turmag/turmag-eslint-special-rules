@@ -1,4 +1,4 @@
-# Require .vue in vue files (`turmag-special-rules/add-vue-extension`)
+# There are can be used shortest alias (`turmag-special-rules/use-shortest-alias`)
 
 🔧 This rule is automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/latest/user-guide/command-line-interface#--fix).
 
@@ -6,16 +6,16 @@
 
 ## 📖 Rule Details
 
-If you want to use vue-files import with its extension, you can use it rule.
-
+If you have many aliases, but want to use shortest, you can use this rule.
+Your config should be configured in a certain order, since this order will be taken into account when comparing the current alias with those in the config.
 
 ```vue
 <script>
 // ✗ BAD
-import SomeComponent from 'somepath/SomeComponent';
+import MyHeader from '@/components/header/Header.vue';
 
 // ✓ GOOD
-import SomeComponent from 'somepath/SomeComponent.vue';
+import MyHeader from '@header/Header.vue';
 </script>
 ```
 
@@ -40,10 +40,10 @@ export const aliases = {
 // end of aliases config
 
 {
-  "special-rules/add-vue-extension": ["error", { aliases }]
+  "special-rules/use-shortest-alias": ["error", { aliases }]
 }
 ```
 
 ## 🔎 Implementation
 
-- [Rule source](../../lib/rules/add-vue-extension.js)
+- [Rule source](../../lib/rules/use-shortest-alias.js)
