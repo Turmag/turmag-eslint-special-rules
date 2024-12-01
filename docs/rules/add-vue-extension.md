@@ -40,7 +40,7 @@ export const aliases = {
 // end of aliases config
 
 {
-  "special-rules/add-vue-extension": ["error", { aliases }]
+  'special-rules/add-vue-extension': ['error', { aliases }]
 }
 ```
 

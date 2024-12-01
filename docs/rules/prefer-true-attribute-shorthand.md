@@ -59,11 +59,11 @@ boolThird: true (boolean)
 ```
 
 ## 🔧 Rule Details (Config)
-Default options is `"always"`.
+Default options is `'always'`.
 
 ```js
 {
-  "special-rules/prefer-true-attribute-shorthand": ["error", "always" | "never"]
+  'special-rules/prefer-true-attribute-shorthand': ['error', 'always' | 'never']
 }
 ```
 

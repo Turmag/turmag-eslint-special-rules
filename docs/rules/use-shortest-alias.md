@@ -40,7 +40,7 @@ export const aliases = {
 // end of aliases config
 
 {
-  "special-rules/use-shortest-alias": ["error", { aliases }]
+  'special-rules/use-shortest-alias': ['error', { aliases }]
 }
 ```
 

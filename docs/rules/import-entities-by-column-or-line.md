@@ -67,7 +67,7 @@ But there is important setting - aliases.
 
 ```js
 {
-  "import-entities-by-column-or-line": ["error", { minProperties: 3 }]
+  'import-entities-by-column-or-line': ['error', { minProperties: 3 }]
 }
 ```
 
