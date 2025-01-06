@@ -38,7 +38,9 @@ import Api from '@/shared/api';
 ```
 
 ## 🔧 Rule Details (Config)
-You can activate it rule or not. Just in case, I want to warn you that the rule is difficult, and it is better to include it last
+You can activate it rule or not. Just in case, I want to warn you that the rule is difficult, and it is better to include it last.
+DEPRECATED RULE!
+It's better to use rule sort-imports with custom groups from plugin eslint-plugin-perfectionist
 
 
 ```js
