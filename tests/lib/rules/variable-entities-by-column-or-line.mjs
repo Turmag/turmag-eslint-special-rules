@@ -28,6 +28,14 @@ tester.run('variable-entities-by-column-or-line', rule, {
         {
             code: `const { variable1, variable2, variable3 } = useSomeComposable();`,
             options: [{ minProperties: 4 }]
+        },
+        {
+            code: `const {
+        someData,
+        isShowSomething = false,
+        itemsLimit,
+    } = params;`,
+            options: [{ minProperties: 3 }]
         }
     ],
     invalid: [
@@ -57,6 +65,22 @@ tester.run('variable-entities-by-column-or-line', rule, {
             errors: [
                 {
                     messageId: 'line',
+                    line: 1,
+                    column: 1,
+                }
+            ]
+        },
+        {
+            code: `const { someData, isShowSomething = false, itemsLimit } = params;`,
+            options: [{ minProperties: 3 }],
+            output: `const {
+    someData,
+    isShowSomething = false,
+    itemsLimit,
+} = params;`,
+            errors: [
+                {
+                    messageId: 'column',
                     line: 1,
                     column: 1,
                 }
