@@ -36,6 +36,20 @@ tester.run('variable-entities-by-column-or-line', rule, {
         itemsLimit,
     } = params;`,
             options: [{ minProperties: 3 }]
+        },
+        {
+            code: `const {
+                        value: {
+                            nextValue: {
+                                specialNextValue: {
+                                    innerValueGraph,
+                                    innerValueCount,
+                                    innerValuePercent,
+                                },
+                            },
+                        },
+                    } = visibilityOptions;`,
+            options: [{ minProperties: 3 }]
         }
     ],
     invalid: [

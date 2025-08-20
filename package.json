@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-turmag-special-rules",
-  "version": "1.0.26",
+  "version": "1.0.27",
   "type": "commonjs",
   "description": "Special eslint rules for your awesome projects",
   "keywords": [
