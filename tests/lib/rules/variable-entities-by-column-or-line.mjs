@@ -50,6 +50,10 @@ tester.run('variable-entities-by-column-or-line', rule, {
                         },
                     } = visibilityOptions;`,
             options: [{ minProperties: 3 }]
+        },
+        {
+            code: `const { ['Дата']: date, ...stats } = record;`,
+            options: [{ minProperties: 3 }]
         }
     ],
     invalid: [
