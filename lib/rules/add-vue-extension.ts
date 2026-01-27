@@ -1,7 +1,7 @@
 import { TSESTree } from '@typescript-eslint/utils';
 
-const path = require('node:path');
-const fs = require('node:fs');
+import path from 'path';
+import fs from 'fs';
 
 export default {
     meta: {
