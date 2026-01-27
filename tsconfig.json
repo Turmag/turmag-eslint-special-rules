@@ -9,6 +9,8 @@
             "@tests/*": ["./tests/lib/rules/*"],
             "@rules/*": ["./lib/rules/*"]
         },
+        "outDir": "./dist",
+        "declaration": true,
         "strict": true,
         "target": "esnext"
     },
@@ -16,9 +18,7 @@
         "sourceType": "module",
     },
     "include": [
-        "src/**/*",
-        "tests/**/*",
-        "**/*.ts"
+        "**/rules/*.ts"
     ],
-    "exclude": ["node_modules"]
+    "exclude": ["node_modules", "tests"]
 }
