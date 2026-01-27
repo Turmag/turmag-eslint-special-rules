@@ -18,7 +18,7 @@
         "sourceType": "module",
     },
     "include": [
-        "**/rules/*.ts"
+        "**/rules/*.ts",
     ],
     "exclude": ["node_modules", "tests"]
 }

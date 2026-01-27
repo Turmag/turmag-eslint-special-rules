@@ -85,7 +85,7 @@ export default {
                             const propertiesArr = getPropertiesArr(properties);
                             const replaceShiftSign = '\n    ';
                             // @ts-expect-error node type
-                            return fixer.replaceText(node, `${kind} {${replaceShiftSign}${propertiesArr.join(`,${replaceShiftSign}`)},\n} = ${rightSideText};`);
+                            return fixer.replaceText(node, `${kind} {${replaceShiftSign}${propertiesArr.join(`,${replaceShiftSign}`)}\n} = ${rightSideText};`);
                         },
                     });
                 } else if (areSmallAttributesInColumn) {

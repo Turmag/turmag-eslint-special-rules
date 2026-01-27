@@ -1,5 +1,5 @@
 import { RuleTester } from 'eslint';
-import rule from '../../../lib/rules/variable-entities-by-column-or-line.js';
+import rule from '@rules/variable-entities-by-column-or-line';
 
 const tester = new RuleTester({
     languageOptions: {
@@ -7,6 +7,7 @@ const tester = new RuleTester({
     }
 });
 
+// @ts-expect-error rule type
 tester.run('variable-entities-by-column-or-line', rule, {
     valid: [
         {
@@ -17,7 +18,7 @@ tester.run('variable-entities-by-column-or-line', rule, {
             code: `const {
                 variable1,
                 variable2,
-                variable3,
+                variable3
             } = useSomeComposable();`,
             options: [{ minProperties: 3 }]
         },
@@ -33,7 +34,7 @@ tester.run('variable-entities-by-column-or-line', rule, {
             code: `const {
         someData,
         isShowSomething = false,
-        itemsLimit,
+        itemsLimit
     } = params;`,
             options: [{ minProperties: 3 }]
         },
@@ -54,6 +55,14 @@ tester.run('variable-entities-by-column-or-line', rule, {
         {
             code: `const { ['Дата']: date, ...stats } = record;`,
             options: [{ minProperties: 3 }]
+        },
+        {
+            code: `const { 
+            items, 
+            subject,
+            special,
+            ...stats } = params;`,
+            options: [{ minProperties: 3 }]
         }
     ],
     invalid: [
@@ -63,7 +72,7 @@ tester.run('variable-entities-by-column-or-line', rule, {
             output: `const {
     variable1,
     variable2,
-    variable3,
+    variable3
 } = useSomeComposable();`,
             errors: [
                 {
@@ -94,7 +103,7 @@ tester.run('variable-entities-by-column-or-line', rule, {
             output: `const {
     someData,
     isShowSomething = false,
-    itemsLimit,
+    itemsLimit
 } = params;`,
             errors: [
                 {
@@ -104,5 +113,22 @@ tester.run('variable-entities-by-column-or-line', rule, {
                 }
             ]
         },
+        {
+            code: `const { items, subject, special, ...stats } = params;`,
+            options: [{ minProperties: 3 }],
+            output: `const {
+    items,
+    subject,
+    special,
+    ...stats
+} = params;`,
+            errors: [
+                {
+                    messageId: 'column',
+                    line: 1,
+                    column: 1,
+                }
+            ]
+        }
     ]
 });
