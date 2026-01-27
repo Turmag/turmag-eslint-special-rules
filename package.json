@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-turmag-special-rules",
-  "version": "1.0.33",
+  "version": "1.0.34",
   "type": "module",
   "description": "Special eslint rules for your awesome projects",
   "keywords": [
@@ -9,10 +9,11 @@
     "eslint-plugin"
   ],
   "author": "Pavel",
-  "main": "./lib/index.ts",
+  "main": "./lib/rules/index.ts",
   "exports": "./dist/index.js",
   "files": [
-    "lib"
+    "lib",
+    "dist"
   ],
   "scripts": {
     "lint": "npm-run-all \"lint:*\"",
