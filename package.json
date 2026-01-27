@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-turmag-special-rules",
-  "version": "1.0.29",
+  "version": "1.0.30",
   "type": "module",
   "description": "Special eslint rules for your awesome projects",
   "keywords": [
@@ -9,8 +9,8 @@
     "eslint-plugin"
   ],
   "author": "Pavel",
-  "main": "./lib/index.js",
-  "exports": "./lib/index.js",
+  "main": "./lib/index.ts",
+  "exports": "./lib/index.ts",
   "files": [
     "lib"
   ],
@@ -21,9 +21,7 @@
     "test": "jest",
     "update:eslint-docs": "eslint-doc-generator"
   },
-  "dependencies": {
-    "requireindex": "^1.2.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@eslint/js": "^9.0.0",
     "@types/jest": "^30.0.0",
