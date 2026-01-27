@@ -18,7 +18,7 @@ export default {
             properties: { minProperties: { type: 'number' } },
         }],
     },
-    // @ts-expect-error create type
+    // @ts-expect-error context type
     create(context) {
         return {
             ImportDeclaration(node: TSESTree.ImportDeclaration) {

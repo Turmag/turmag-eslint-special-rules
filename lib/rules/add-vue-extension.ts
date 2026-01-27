@@ -1,7 +1,9 @@
+import { TSESTree } from '@typescript-eslint/utils';
+
 const path = require('node:path');
 const fs = require('node:fs');
 
-module.exports = {
+export default {
     meta: {
         fixable: 'code',
         type: 'suggestion',
@@ -16,9 +18,9 @@ module.exports = {
             properties: { aliases: { type: 'object' } },
         }],
     },
-    create(context) {
+    create(context: { options: { aliases: { [key: string]: string; } | ArrayLike<string>; }[]; getFilename: () => string; report: (arg0: { node: unknown; messageId: string; fix: (fixer: any) => any; }) => void; }) {
         return {
-            ImportDeclaration(node) {
+            ImportDeclaration(node: TSESTree.ImportDeclaration) {
                 const aliases = Object.entries(context.options[0].aliases);
                 if (!aliases.length) return;
 
@@ -33,7 +35,7 @@ module.exports = {
                 const filePath = path.resolve(basedir, nodeName);
 
                 const vueExt = '.vue';
-                const findRealExtension = filePath => {
+                const findRealExtension = (filePath: string) => {
                     let realExt = fs.existsSync(filePath) ? path.extname(filePath) : null;
                     if (realExt === null) realExt = fs.existsSync(`${filePath}${vueExt}`) ? path.extname(`${filePath}${vueExt}`) : null;
 

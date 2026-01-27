@@ -1,4 +1,7 @@
-module.exports = {
+import { TSESTree } from '@typescript-eslint/utils';
+import { Rule } from 'eslint';
+
+export default {
     meta: {
         fixable: 'code',
         type: 'suggestion',
@@ -13,10 +16,11 @@ module.exports = {
             properties: { aliases: { type: 'object' } },
         }],
     },
+    // @ts-expect-error context type
     create(context) {
         return {
-            ImportDeclaration(node) {
-                const aliases = Object.entries(context.options[0].aliases);
+            ImportDeclaration(node: TSESTree.ImportDeclaration) {
+                const aliases = Object.entries(context.options[0].aliases) as unknown as string[];
                 if (!aliases.length) return;
 
                 const nodeName = node.source.value;
@@ -41,12 +45,12 @@ module.exports = {
                     context.report({
                         node,
                         messageId: 'shortest',
-                        fix: fixer => {
+                        fix: (fixer: Rule.RuleFixer) => {
                             let replaceText = '';
                             if (node.specifiers[0].type === 'ImportDefaultSpecifier')
                                 replaceText = `import ${node.specifiers[0].local.name} from '${resultNodeName}';`;
                             else {
-                                const specifiersArr = [];
+                                const specifiersArr: string[] = [];
                                 node.specifiers.forEach(specifier => specifiersArr.push(specifier.local.name));
 
                                 const replaceSign = specifiersArr.length > 2 ? '\n' : ' ';
