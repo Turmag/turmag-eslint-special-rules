@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": ".",
+        "lib": ["esnext", "dom"],
+        "module": "esnext",
+        "moduleResolution": "node",
+        "paths": { 
+            "@tests/*": ["./tests/lib/rules/*"],
+            "@rules/*": ["./lib/rules/*"]
+        },
+        "strict": true,
+        "target": "esnext"
+    },
+    "parserOptions": {
+        "sourceType": "module",
+    },
+    "include": [
+        "src/**/*",
+        "tests/**/*",
+        "**/*.ts"
+    ],
+    "exclude": ["node_modules"]
+}

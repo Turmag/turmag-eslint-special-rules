@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     meta: {
         fixable: 'code',
         type: 'suggestion',
@@ -12,18 +12,19 @@ module.exports = {
         },
         schema: [{ enum: ['always', 'never'] }],
     },
+    // @ts-expect-error create type
     create(context) {
         const sourceCode = context.getSourceCode();
         return sourceCode.parserServices?.defineTemplateBodyVisitor
             ? sourceCode.parserServices.defineTemplateBodyVisitor({
-                VAttribute(node) {
+                VAttribute(node: { directive: unknown; value: { expression: { value: boolean; }; }; key: { rawName?: unknown; name?: unknown; argument?: unknown; }; }) {
                     const option = context.options[0] || 'always';
 
                     if (option === 'never' && !node.directive && !node.value) {
                         context.report({
                             node,
                             messageId: 'longHand',
-                            fix: fixer => fixer.replaceText(node, `:${node.key.rawName}="true"`),
+                            fix: (fixer: { replaceText: (arg0: unknown, arg1: string) => unknown; }) => fixer.replaceText(node, `:${node.key.rawName}="true"`),
                         });
                     }
 
@@ -36,7 +37,7 @@ module.exports = {
                         context.report({
                             node,
                             messageId: 'shortHand',
-                            fix: fixer => {
+                            fix: (fixer: { replaceText: (arg0: unknown, arg1: unknown) => unknown; }) => {
                                 const sourceCode = context.getSourceCode();
                                 return fixer.replaceText(node, sourceCode.getText(argument));
                             },
