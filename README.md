@@ -70,6 +70,7 @@ export default [
 | [prefer-true-attribute-shorthand](docs/rules/prefer-true-attribute-shorthand.md)         | Require shorthand form attribute when `v-bind` value is `true` | 🔧 |
 | [use-shortest-alias](docs/rules/use-shortest-alias.md)                                   | There are can be used shortest alias                           | 🔧 |
 | [variable-entities-by-column-or-line](docs/rules/variable-entities-by-column-or-line.md) | Prefered column or line destructuring                          | 🔧 |
+| [vue-remove-script-indents](docs/rules/vue-remove-script-indents.md)                     | Remove extra padding lines in `<script>` tags of Vue files     | 🔧 |
 
 <!-- end auto-generated rules list -->
 

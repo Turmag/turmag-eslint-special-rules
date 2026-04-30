@@ -1,4 +1,6 @@
-# Require .vue in vue files (`turmag-special-rules/add-vue-extension`)
+# turmag-special-rules/add-vue-extension
+
+📝 Require .vue in vue files.
 
 🔧 This rule is automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/latest/user-guide/command-line-interface#--fix).
 
@@ -46,4 +48,4 @@ export const aliases = {
 
 ## 🔎 Implementation
 
-- [Rule source](../../lib/rules/add-vue-extension.js)
+- [Rule source](../../lib/rules/add-vue-extension.ts)

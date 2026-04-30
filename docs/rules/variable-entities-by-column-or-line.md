@@ -1,9 +1,10 @@
-# Prefered column or line destructuring (`turmag-special-rules/variable-entities-by-column-or-line`)
+# turmag-special-rules/variable-entities-by-column-or-line
+
+📝 Prefered column or line destructuring.
 
 🔧 This rule is automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/latest/user-guide/command-line-interface#--fix).
 
 <!-- end auto-generated rule header -->
-
 
 ## 📖 Rule Details
 
@@ -63,4 +64,4 @@ But there is important setting - aliases.
 
 ## 🔎 Implementation
 
-- [Rule source](../../lib/rules/variable-entities-by-column-or-line.js)
+- [Rule source](../../lib/rules/variable-entities-by-column-or-line.ts)

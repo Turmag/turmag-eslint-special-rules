@@ -1,4 +1,6 @@
-# Require shorthand form attribute when `v-bind` value is `true` (`turmag-special-rules/prefer-true-attribute-shorthand`)
+# turmag-special-rules/prefer-true-attribute-shorthand
+
+📝 Require shorthand form attribute when `v-bind` value is `true`.
 
 🔧 This rule is automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/latest/user-guide/command-line-interface#--fix).
 
@@ -72,4 +74,4 @@ Default options is `'always'`.
 
 ## 🔎 Implementation
 
-- [Rule source](../../lib/rules/prefer-true-attribute-shorthand.js)
+- [Rule source](../../lib/rules/prefer-true-attribute-shorthand.ts)

@@ -1,4 +1,6 @@
-# There are can be used shortest alias (`turmag-special-rules/use-shortest-alias`)
+# turmag-special-rules/use-shortest-alias
+
+📝 There are can be used shortest alias.
 
 🔧 This rule is automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/latest/user-guide/command-line-interface#--fix).
 
@@ -46,4 +48,4 @@ export const aliases = {
 
 ## 🔎 Implementation
 
-- [Rule source](../../lib/rules/use-shortest-alias.js)
+- [Rule source](../../lib/rules/use-shortest-alias.ts)
