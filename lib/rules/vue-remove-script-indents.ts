@@ -51,7 +51,6 @@ export default {
 
                     const fixedContent = `${openingTag}\n${cleanedContent}\n${closingTag}`;
 
-                    // Нормализуем оригинал для сравнения
                     const normalizedOriginal = normalizeToNewlines(match[0]);
                     const normalizedFixed = normalizeToNewlines(fixedContent);
 
