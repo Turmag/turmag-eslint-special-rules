@@ -16,3 +16,4 @@ dist/
 
 # Other
 coverage
+yarn.lock
